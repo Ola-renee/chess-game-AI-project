@@ -250,6 +250,7 @@ class AI:
         return arr
 
 
+<<<<<<< HEAD
 def calculateb(self, gametiles):
     piece_values = {
         'P': -100, 'N': -320, 'B': -330, 'R': -500,
@@ -257,6 +258,15 @@ def calculateb(self, gametiles):
         'p': 100, 'n': 320, 'b': 330, 'r': 500,
         'q': 900, 'k': 20000
     }
+=======
+    def calculateb(self, gametiles):
+        piece_values = {
+            'P': -100, 'N': -320, 'B': -330, 'R': -500,
+            'Q': -900, 'K': -20000,
+            'p': 100, 'n': 320, 'b': 330, 'r': 500,
+            'q': 900, 'k': 20000
+            }
+>>>>>>> b4259c198067dd73fb722fe0c9f6857448e745be
     value = 0
     for y in range(8):
         for x in range(8):
@@ -266,10 +276,13 @@ def calculateb(self, gametiles):
             if piece_str in ['P', 'p']:
                 if x in [2, 3, 4, 5]:
                     value += 10 if piece_str == 'p' else -10
+<<<<<<< HEAD
                 if y == 6 and piece_str == 'p':
                     value += 50
                 if y == 1 and piece_str == 'P':
                     value -= 50
+=======
+>>>>>>> b4259c198067dd73fb722fe0c9f6857448e745be
             if piece_str in ['N', 'n']:
                 distance_center = max(abs(3.5 - x), abs(3.5 - y))
                 value -= (8 - distance_center) * (20 if piece_str == 'n' else -20)
@@ -281,7 +294,10 @@ def calculateb(self, gametiles):
                 value -= king_safety * (100 if piece_str == 'k' else -100)
     return value
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b4259c198067dd73fb722fe0c9f6857448e745be
     
     def move(self,gametiles,y,x,n,m):
         promotion=False
